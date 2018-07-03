@@ -1,20 +1,16 @@
 package com.vise.snowdemo;
 
 import android.Manifest;
-import android.app.AlertDialog;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.widget.Toolbar;
-import android.text.SpannableString;
-import android.text.method.LinkMovementMethod;
-import android.text.util.Linkify;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.TextView;
 
+import com.coollen.cache.SerializableTest;
 import com.vise.log.ViseLog;
 import com.vise.snowdemo.activity.ImageLoaderActivity;
 import com.vise.snowdemo.activity.NetTestActivity;
@@ -130,25 +126,26 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
     }
 
     private void displayAboutDialog() {
-        final int paddingSizeDp = 5;
-        final float scale = getResources().getDisplayMetrics().density;
-        final int dpAsPixels = (int) (paddingSizeDp * scale + 0.5f);
-
-        final TextView textView = new TextView(this);
-        final SpannableString text = new SpannableString(getString(R.string.about_dialog_text));
-
-        textView.setText(text);
-        textView.setAutoLinkMask(RESULT_OK);
-        textView.setMovementMethod(LinkMovementMethod.getInstance());
-        textView.setPadding(dpAsPixels, dpAsPixels, dpAsPixels, dpAsPixels);
-
-        Linkify.addLinks(text, Linkify.ALL);
-        new AlertDialog.Builder(this)
-                .setTitle(R.string.menu_about)
-                .setCancelable(false)
-                .setPositiveButton(android.R.string.ok, null)
-                .setView(textView)
-                .show();
+        SerializableTest.test(this);
+//        final int paddingSizeDp = 5;
+//        final float scale = getResources().getDisplayMetrics().density;
+//        final int dpAsPixels = (int) (paddingSizeDp * scale + 0.5f);
+//
+//        final TextView textView = new TextView(this);
+//        final SpannableString text = new SpannableString(getString(R.string.about_dialog_text));
+//
+//        textView.setText(text);
+//        textView.setAutoLinkMask(RESULT_OK);
+//        textView.setMovementMethod(LinkMovementMethod.getInstance());
+//        textView.setPadding(dpAsPixels, dpAsPixels, dpAsPixels, dpAsPixels);
+//
+//        Linkify.addLinks(text, Linkify.ALL);
+//        new AlertDialog.Builder(this)
+//                .setTitle(R.string.menu_about)
+//                .setCancelable(false)
+//                .setPositiveButton(android.R.string.ok, null)
+//                .setView(textView)
+//                .show();
     }
 
 }
